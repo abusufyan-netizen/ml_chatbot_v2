@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+venv/
+model/digit_model.h5
+data/history.csv
