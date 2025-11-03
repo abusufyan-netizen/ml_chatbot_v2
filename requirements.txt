@@ -1,6 +1,7 @@
+torch
+torchvision
 streamlit
 streamlit-drawable-canvas
-tensorflow
-numpy
 pandas
-Pillow
+pillow
+numpy
