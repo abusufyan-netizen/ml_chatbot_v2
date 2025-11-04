@@ -52,13 +52,9 @@ def load_pytorch_model(model_path="model/mnist_cnn_best.pth"):
 def preprocess_image(image):
     if isinstance(image, Image.Image):
         image = image.convert("L").resize((28, 28))
-    else:
-        raise TypeError("Input must be a PIL.Image")
-
-    img_array = np.array(image, dtype=np.float32)
-    img_array = 255 - img_array  # invert colors if background is white
-    img_array = img_array / 255.0
-    tensor = torch.tensor(img_array).unsqueeze(0).unsqueeze(0)
+img_array = 255 - np.array(image, dtype=np.float32)
+img_array /= 255.0
+tensor = torch.tensor(img_array).unsqueeze(0).unsqueeze(0)
     return tensor
 
 # ------------------------------------------------------------
